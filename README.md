@@ -9,8 +9,6 @@
   ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
   ![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
   ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
-  
-  ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 
 
 </div>
@@ -109,7 +107,7 @@ Referal_System - REST API проект на DRF, в котором предст�
     poetry install
     ```
   
-5. Создать файл .env в корневой папке проекта и заполнить файл по шаблону:
+5. Создать файл .env в корневой папке проекта и заполнить файл по шаблону. Для успешного подключения к Redis параметру DEV должен быть в значении True. Если нужно запустить кол с БД postgres, установить значение параметра DB_ENGINE_POSTGRES в True.
  
     ```
     POSTGRES_USER = логин для подключения к базе данных
@@ -137,6 +135,20 @@ Referal_System - REST API проект на DRF, в котором предст�
 > Подробная документация API доступна после запуска сервера по адресу http://127.0.0.1:8000/api/v1/schema/docs/
 
 </details>
+
+<details>
+  <summary>
+    <h2> Запуск проекта в контейнере. </h2>
+  </summary>
+
+1. В файле .env закомментируйте две строки: DB_HOST и DB_PORT. Параметр DEV установите в значение False.
+
+2. Из каталога gateway выполните команду:
+    ```
+    (venv) $ docker-compose up --build
+    ```
+</details>
+
 
 ---
 <div align=center>
